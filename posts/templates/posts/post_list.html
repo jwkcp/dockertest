@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <h2>
+        <a href="{% url 'index' %}" class="mr-1">Just List</a>
+        목록 <span class="text-muted">{{ object_list.count }}</span>
+      </h2>
+    </div>
+
+    <div class="text-right">
+      <a href="{% url 'posts:post_add' %}" class="btn btn-success btn-sm">새 항목 추가</a>
+    </div>
+
+    <hr/>
+
+    {% for post in object_list %}
+      <div class="row mb-3">
+        <div class="col-md-1">
+          {{ post.id }}
+        </div>
+        <div class="col-md-3">
+          {% if post.postimage %}
+            <img src="{{ post.postimage.url }}"
+                 style="width: 100%; object-fit: cover";>
+          {% endif %}
+        </div>
+        <div class="col-md-8">{{ post.title }}</div>
+      </div>
+      <div class="text-right">
+        <a href="{% url 'posts:post_delete' post.id %}">
+          <small class="text-danger">삭제히기</small>
+        </a>
+        <small class="text-muted"> | {{ post.create_date|date:"Y-m-d" }}</small>
+      </div>
+      <hr/>
+    {% endfor %}
+  </div>
+{% endblock %}

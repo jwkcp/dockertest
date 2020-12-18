@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div class="container">
+    <h2>항목 상세</h2>
+    <hr/>
+
+    <div class="card">
+      <div class="card-title p-3">
+        <h3>{{ object.title }}</h3>
+      </div>
+      <div class="card-body">
+        {{ object.create_date|date:"Y.m.d" }}
+        {% if object.postimage %}
+          <div>
+            <img src="{{ object.postimage.url }}" style="width: 100%;">
+{#            <img src="{{ object.postimage.url }}" style="width: 100px; object-fit: cover;">#}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="mt-1">
+      <a href="{% url 'posts:post_list' %}">< 목록으로</a>
+    </div>
+  </div>
+{% endblock %}
