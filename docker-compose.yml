@@ -20,7 +20,8 @@ services:
     depends_on:
       - web
   web:
-    build: .
+#    build: .
+    image: jwkcp/dockertest:latest
     volumes:
       - .:/code
 #    ports:
