@@ -4,6 +4,7 @@ uploads/
 staticfiles/
 .venv/
 .idea
+pgdata
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/django,pycharm

@@ -30,4 +30,4 @@ services:
       - db
     env_file:
       - .env
-    entrypoint: ["/code/script/entrypoint_app.sh"]
+#    entrypoint: ["/code/script/entrypoint_app.sh"]
