@@ -7,7 +7,7 @@ After=docker.service
 
 [Service]
 Type=oneshot
-RemindAfterExit=yes
+RemainAfterExit=yes
 # match the below to wherever you copied your docker-compose.yml
 WorkingDirectory=/srv/docker
 ExecStart=/usr/local/bin/docker-compose up -d
