@@ -14,7 +14,7 @@ fi
 sudo curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/jwkcp/dockertest/master/docker-compose.yml
 
 # Set systemd
-sudo curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/jwkcp/dockertest/master/docker-compose.yml
+sudo curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/jwkcp/dockertest/master/docker-compose-app.service
 sudo systemctl enable docker-compose-app
 
 # start up the application via docker-compose
