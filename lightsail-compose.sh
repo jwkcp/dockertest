@@ -8,7 +8,9 @@ sudo usermod -aG docker ubuntu
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-sudo mkdir /srv/docker
+if [ ! -d /srv/docker ];then
+  sudo mkdir /srv/docker
+fi
 sudo curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/jwkcp/dockertest/master/docker-compose.yml
 
 # Set systemd
