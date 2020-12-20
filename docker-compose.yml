@@ -15,5 +15,5 @@ services:
     volumes:
       - .:/code
     env_file:
-      - .env
-    entrypoint: ./entrypoint.sh
+      - ./config/.env
+    entrypoint: entrypoint.sh
