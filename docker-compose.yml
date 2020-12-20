@@ -10,10 +10,10 @@ services:
     depends_on:
       - web
   web:
-#    build: .
-    image: jwkcp/dockertest:latest
+    build: .
+#    image: jwkcp/dockertest:latest
     volumes:
       - .:/code
     env_file:
-      - ./config/.env
+      - .env
     entrypoint: entrypoint.sh
