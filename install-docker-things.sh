@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt update
+
 # Install docker
 curl -sSL https://get.docker.com | sh
 sudo usermod -aG docker ubuntu
