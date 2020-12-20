@@ -6,5 +6,5 @@ COPY requirements.txt /code/
 RUN bash -c "pip install --upgrade pip \
  && pip install -r requirements.txt"
 COPY . /code/
-RUN /code/script/entrypoint.sh
+RUN ./script/entrypoint.sh
 
