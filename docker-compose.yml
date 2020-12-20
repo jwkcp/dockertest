@@ -16,4 +16,4 @@ services:
       - .:/code
     env_file:
       - ./config/app/.env
-    entrypoint: ["/code/script/entrypoint.sh"]
+    entrypoint: ["entrypoint.sh"]
