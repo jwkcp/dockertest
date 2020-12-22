@@ -11,7 +11,7 @@ class PublicMediaStorage(S3Boto3Storage):
     file_overwrite = False
 
 
-class MediaStorage(S3Boto3Storage):
+class PrivateMediaStorage(S3Boto3Storage):
     location = settings.AWS_PRIVATE_MEDIA_LOCATION
     default_acl = 'private'
     file_overwrite = False
